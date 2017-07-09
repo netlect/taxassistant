@@ -1,16 +1,43 @@
-<%@page import="org.openshift.InsultGenerator"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insult Generator</title>
-</head>
-<body>
-<%
-out.println(new InsultGenerator().generateInsult());
-%>
 
-</body>
-</html>
+package org.netlect;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+public class TestDB {
+public String getTestName() {
+
+    String vowels = "AEIOU";
+    String article = "an";
+    String theInsult = "";
+
+    try {
+
+        String databaseURL = "jdbc:postgresql://";
+databaseURL += System.getenv("POSTGRESQL_SERVICE_HOST");
+databaseURL += "/" + System.getenv("POSTGRESQL_DATABASE");
+String username = System.getenv("POSTGRESQL_USER");
+String password = System.getenv("PGPASSWORD");
+Connection connection = DriverManager.getConnection(databaseURL, username, password);
+if (connection != null) {
+String SQL = "select a.string AS first, b.string AS second, c.string AS noun from short_adjective a , long_adjective b, noun c ORDER BY random() limit 1";
+Statement stmt = connection.createStatement();
+ResultSet rs = stmt.executeQuery(SQL);
+while (rs.next()) {
+if (vowels.indexOf(rs.getString("first").charAt(0)) == -1) {
+article = "a";
+}
+theInsult = String.format("Thou art %s %s %s %s!", article, rs.getString("first"),
+rs.getString("second"), rs.getString("noun"));
+}
+rs.close();
+connection.close();
+}
+} catch (Exception e) {
+return "Database connection problem!";
+}
+return theInsult;
+}
+}
