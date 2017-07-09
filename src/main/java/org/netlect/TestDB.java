@@ -50,7 +50,8 @@ public String getTestName() {
     } catch (Exception e) {
 
 //     return "Database connection problem!";
-        return e.getMessage();
+  //      return e.getMessage();
+     return e.printStackTrace();
 
     }
 
