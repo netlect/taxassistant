@@ -39,13 +39,20 @@ public String getTestName() {
 //}
 
              theName= String.format("The test name is %s!", rs.getString("name"));
-}
-rs.close();
-connection.close();
-}
-} catch (Exception e) {
-return "Database connection problem!";
-}
-return theInsult;
+
+            }
+
+         rs.close();
+         connection.close();
+
+        }
+
+    } catch (Exception e) {
+
+     return "Database connection problem!";
+
+    }
+
+ return theName;
 }
 }
