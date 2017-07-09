@@ -49,7 +49,8 @@ public String getTestName() {
 
     } catch (Exception e) {
 
-     return "Database connection problem!";
+//     return "Database connection problem!";
+        return e;
 
     }
 
