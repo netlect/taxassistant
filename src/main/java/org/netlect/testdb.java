@@ -37,8 +37,8 @@ public String getTestName() {
 //if (vowels.indexOf(rs.getString("first").charAt(0)) == -1) {
 //article = "a";
 //}
-theInsult = String.format("Thou art %s %s %s %s!", article, rs.getString("first"),
-rs.getString("second"), rs.getString("noun"));
+
+             theName= String.format("The test name is %s!", rs.getString("name"));
 }
 rs.close();
 connection.close();
