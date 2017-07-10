@@ -55,7 +55,8 @@ public String getTestName() {
 //     return "Database connection problem!";
   //      return e.getMessage();
   //   return e.printStackTrace();
-     return username.concat(password);//e.toString();
+ //    return username.concat(password);
+     e.toString();
 
     }
 
