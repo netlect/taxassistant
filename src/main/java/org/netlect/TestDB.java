@@ -14,6 +14,8 @@ public String getTestName() {
     String theName= "";
  String username="";
  String password="";
+ 
+ String testpoint="init";
 
     try {
 
@@ -25,9 +27,9 @@ public String getTestName() {
         password = "rafael7319";//System.getenv("PGPASSWORD");
 
         Connection connection = DriverManager.getConnection(databaseURL, username, password);
-
+testpoint="connecting";
         if (connection != null) {
-
+testpoint="connected";
      //       String SQL = "select a.string AS first, b.string AS second, c.string AS noun from short_adjective a , long_adjective b, noun c ORDER BY random() limit 1";
 
             String SQL = "select name from test where id=1";        
@@ -35,14 +37,14 @@ public String getTestName() {
             Statement stmt = connection.createStatement();
 
             ResultSet rs = stmt.executeQuery(SQL);
-
+testpoint="query executed";
             while (rs.next()) {
 //if (vowels.indexOf(rs.getString("first").charAt(0)) == -1) {
 //article = "a";
 //}
 
              theName= String.format("The test name is %s!", rs.getString("name"));
-
+testpoint="resultset proccessed";
             }
 
          rs.close();
@@ -60,7 +62,9 @@ public String getTestName() {
 
     }
 
- return theName;
+ //return theName;
+ return testpoint;
+ 
 
 }
 
