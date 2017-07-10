@@ -58,7 +58,7 @@ testpoint="resultset proccessed";
   //      return e.getMessage();
   //   return e.printStackTrace();
  //    return username.concat(password);
-     e.toString();
+     return e.toString();
 
     }
 
