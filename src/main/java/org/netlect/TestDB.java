@@ -52,7 +52,7 @@ public String getTestName() {
 //     return "Database connection problem!";
   //      return e.getMessage();
   //   return e.printStackTrace();
-     return e.toString();
+     return username+password+e.toString();
 
     }
 
