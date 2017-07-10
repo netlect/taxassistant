@@ -21,8 +21,8 @@ public String getTestName() {
         databaseURL += "postgresql:5432"; //System.getenv("POSTGRESQL_SERVICE_HOST");
         databaseURL += "/" + "sampledb"; //System.getenv("POSTGRESQL_DATABASE");
         
-        username = System.getenv("POSTGRESQL_USER");
-        password = System.getenv("PGPASSWORD");
+        username = "rafael";//System.getenv("POSTGRESQL_USER");
+        password = "rafael7319";//System.getenv("PGPASSWORD");
 
         Connection connection = DriverManager.getConnection(databaseURL, username, password);
 
