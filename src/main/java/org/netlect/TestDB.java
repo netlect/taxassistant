@@ -18,6 +18,8 @@ public String getTestName() {
  String testpoint="init";
 
     try {
+     
+     Class.forName("org.postgresql.Driver");
 
         String databaseURL = "jdbc:postgresql://";
         databaseURL += "postgresql:5432"; //System.getenv("POSTGRESQL_SERVICE_HOST");
