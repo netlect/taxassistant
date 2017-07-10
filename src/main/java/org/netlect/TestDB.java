@@ -64,8 +64,8 @@ testpoint="resultset proccessed";
 
     }
 
- //return theName;
- return testpoint;
+ return theName;
+ //return testpoint;
  
 
 }
