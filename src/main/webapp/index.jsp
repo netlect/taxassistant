@@ -12,5 +12,12 @@
 out.println(new TestDB().getTestName("2"));
 %>
 
+  <form action = "main.jsp" method = "POST">
+         First Name: <input type = "text" name = "test id">
+         <br />
+         Last Name: <input type = "text" name = "last_name" />
+         <input type = "submit" value = "Submit" />
+      </form>  
+    
 </body>
 </html>
