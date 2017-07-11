@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 
 public class TestDB {
-public String getTestName() {
+public String getTestName(String testid) {
 
  //   String vowels = "AEIOU";
 //    String article = "an";
@@ -34,7 +34,7 @@ testpoint="connecting";
 testpoint="connected";
      //       String SQL = "select a.string AS first, b.string AS second, c.string AS noun from short_adjective a , long_adjective b, noun c ORDER BY random() limit 1";
 
-            String SQL = "select name from test where id=1";        
+            String SQL = "select name from test where id="+testid;        
             
             Statement stmt = connection.createStatement();
 
