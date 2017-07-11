@@ -15,7 +15,10 @@
       
       <ul>
          <li><p><b>test name by id:</b>
-            <%= request.getParameter("test_id")%>
+            <% 
+               String testid = request.getParameter("test_id");
+               out.println(new TestDB().getTestName(testid));
+            %>
          </p></li>
       </ul>
    
