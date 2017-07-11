@@ -9,7 +9,7 @@
 </head>
 <body>
 <%
-out.println(new TestDB().getTestName());
+out.println(new TestDB().getTestName("2"));
 %>
 
 </body>
