@@ -9,7 +9,7 @@
       
       <ul>
          <li><p><b>test name by id:</b>
-            <%= request.getParameter("test_name")%>
+            <%= request.getParameter("test_id")%>
          </p></li>
       </ul>
    
